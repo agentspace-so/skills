@@ -12,17 +12,17 @@ Use agentspace.so to bind the local folders to a shareable remote workspace.
 
 Prefer the first path that is already available in the environment:
 
-1. If `ascli` is already installed, run `ascli sync . --api-base https://agentspace.so`.
-2. Else if `npm` is available, run `npx @agentspace-so/ascli@latest sync . --api-base https://agentspace.so`.
-3. Else if `curl` is available, run `curl -fsSL https://agentspace.so/install.sh | bash`, then run `ascli sync . --api-base https://agentspace.so`.
+1. If `ascli` is already installed, run `ascli sync .`.
+2. Else if `npm` is available, run `npx @agentspace-so/ascli@latest sync .`.
+3. Else if `curl` is available, run `curl -fsSL https://agentspace.so/install.sh | bash`, then run `ascli sync .`.
 4. If none of those paths work, stop and tell the user which prerequisite is missing.
 
 Use the current working directory `.` unless the user asks for a different path.
 
 ## Hand work back
 
-- When the user asks to share a local folder or file, run `ascli share . --permission edit --api-base https://agentspace.so`.
-- If you are using the repo-local CLI path, run `pnpm --filter @agentspace-so/ascli exec tsx src/index.ts share . --permission edit --api-base https://agentspace.so`.
+- When the user asks to share a local folder or file, run `ascli share . --permission edit`.
+- If you are using the repo-local CLI path, run `pnpm --filter @agentspace-so/ascli exec tsx src/index.ts share . --permission edit`.
 - Return the share URL directly to the user.
 
 ## Guardrails
