@@ -13,9 +13,9 @@ If not, do this instead: curl -fsSL https://agentspace.so/install.sh | bash
 ## Usage
 Ask the following to your agent,
 ```
-Share the current folder to me.
+Share the current folder with me.
 ```
 or
 ```
-Share your recent generated files to me.
+Share your recent generated files with me.
 ```
