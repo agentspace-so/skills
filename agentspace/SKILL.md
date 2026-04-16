@@ -1,6 +1,11 @@
 ---
 name: agentspace
-description: Sync folder/file to cloud storage and return a share link. Use when asked to share local files to human or other agent.
+description: >
+  Use this skill when the user wants to share a local folder, file,
+  generated artifacts, logs, screenshots, or a project workspace with
+  a human or another agent via a link. Trigger on requests like
+  "share this folder", "upload these files", "send me the artifacts",
+  "give me a link", or "handoff this workspace".
 license: MIT
 ---
 
@@ -22,6 +27,7 @@ Use the current working directory `.` unless the user asks for a different path.
 ## Hand work back
 
 - When the user asks to share a local folder or file, run `ascli share . --permission edit`.
+- If the user explicitly asks for view-only access, run `ascli share . --permission view`.
 - If you are using the repo-local CLI path, run `pnpm --filter @agentspace-so/ascli exec tsx src/index.ts share . --permission edit`.
 - Return the share URL directly to the user.
 

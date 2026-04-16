@@ -22,7 +22,15 @@ pnpm --filter @agentspace-so/ascli exec tsx src/index.ts sync .
 ## Share link
 
 ```bash
+ascli share .
+```
+
+```bash
 ascli share . --permission edit
+```
+
+```bash
+pnpm --filter @agentspace-so/ascli exec tsx src/index.ts share .
 ```
 
 ```bash
