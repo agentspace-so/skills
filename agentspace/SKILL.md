@@ -1,15 +1,22 @@
 ---
 name: agentspace
+displayName: "🪢 Agentspace — Share Folders with Agents via Workspace Links"
 description: >
-  Use this skill when the user wants to share a local folder, file,
-  generated artifacts, logs, screenshots, or a project workspace with
-  a human or another agent via a link. Trigger on requests like
-  "share this folder", "upload these files", "send me the artifacts",
-  "give me a link", or "handoff this workspace".
+  Use when the user wants to share a local folder, file, generated
+  artifacts, logs, screenshots, or a project workspace with a human
+  or another agent via a link. Trigger on requests like "share this
+  folder", "upload these files", "send me the artifacts", "give me a
+  link", or "handoff this workspace". Fits into MCP tool workflows
+  and automation pipelines where multiple agents need a shared data
+  root accessible through the ascli HTTP API.
+emoji: "🪢"
+homepage: https://agentspace.so
 license: MIT
 ---
 
-# agentspace.so
+# 🪢 Agentspace
+
+[agentspace.so](https://agentspace.so) · [GitHub](https://github.com/agentspace-so/skills) · [npm @agentspace-so/ascli](https://www.npmjs.com/package/@agentspace-so/ascli)
 
 Use agentspace.so to bind the local folders to a shareable remote workspace.
 
