@@ -18,29 +18,37 @@ license: MIT
 
 [agentspace.so](https://agentspace.so) · [GitHub](https://github.com/agentspace-so/skills) · [npm @agentspace-so/ascli](https://www.npmjs.com/package/@agentspace-so/ascli)
 
-Use agentspace.so to bind the local folders to a shareable remote workspace.
+Use agentspace.so to share a specific local folder or file with a human or another agent via a workspace link.
 
-## Choose the setup path
+## Data handling
+
+- Only the path the user explicitly names is uploaded. Do not default to uploading the current working directory unless the user clearly says so.
+- All network traffic goes to `agentspace.so` only. The skill does not call any other endpoint.
+- The skill does not read environment variables, shell history, or files outside the path the user specifies.
+
+## Choose the CLI path
 
 Prefer the first path that is already available in the environment:
 
-1. If `ascli` is already installed, run `ascli sync .`.
-2. Else if `npm` is available, run `npx @agentspace-so/ascli@latest sync .`.
-3. Else if `curl` is available, run `curl -fsSL https://agentspace.so/install.sh | bash`, then run `ascli sync .`.
-4. If none of those paths work, stop and tell the user which prerequisite is missing.
+1. If `ascli` is already on `PATH`, use it directly.
+2. Else if `npm` is available, install once with `npm install -g @agentspace-so/ascli@latest`, or run without installing via `npx @agentspace-so/ascli@latest <command>`.
+3. If neither `ascli` nor `npm` is available, stop and tell the user to install Node.js from nodejs.org first.
 
-Use the current working directory `.` unless the user asks for a different path.
+Do not pipe a remote script into a shell to install.
 
-## Hand work back
+## Share a path
 
-- When the user asks to share a local folder or file, run `ascli share . --permission edit`.
-- If the user explicitly asks for view-only access, run `ascli share . --permission view`.
-- If you are using the repo-local CLI path, run `pnpm --filter @agentspace-so/ascli exec tsx src/index.ts share . --permission edit`.
-- Return the share URL directly to the user.
+- Ask the user which folder or file to share if they have not named one explicitly. Do not assume `.`.
+- Run `ascli share <path> --permission edit` with the user-specified path.
+- If the user asks for view-only access, use `--permission view`.
+- If you are using the repo-local CLI path, run `pnpm --filter @agentspace-so/ascli exec tsx src/index.ts share <path> --permission edit`.
+- `share` handles an unbound folder by creating a temporary workspace, syncing once, and returning a link — no separate `sync` step is needed.
+- Return the share URL directly to the user exactly as the CLI prints it.
 
 ## Guardrails
 
 - Do not invent claim URLs, workspace URLs, or share URLs. Only return what the CLI prints.
-- Do not require a global install if the `npx` path already works.
+- Do not require a global install if `npx` already works.
 - Do not move the user into a different project just to use agentspace.so.
+- If the user asks to "share this folder" and the target is ambiguous, confirm the exact path before running.
 - If you need exact command variants, read [references/commands.md](references/commands.md).
