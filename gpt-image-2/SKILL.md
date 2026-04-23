@@ -20,28 +20,16 @@ Generate images with **GPT Image 2** (ChatGPT Images 2.0) inside Claude Code, us
 
 Text-to-image, image-to-image editing, style transfer, and multi-reference composition. Runs entirely through the local `codex` CLI you're already logged into.
 
-## Gallery
+> **Heads up — this skill requires a ChatGPT Plus or Pro subscription _plus_ the Codex CLI installed locally.** Don't have either? GPT Image 2 is also available as a hosted web UI — no signup, no subscription:
+>
+> - **Text-to-image:** <https://www.runcomfy.com/models/openai/gpt-image-2/text-to-image>
+> - **Image edit (i2i):** <https://www.runcomfy.com/models/openai/gpt-image-2/edit>
+>
+> The rest of this document covers the local Codex CLI flow for agents whose user has a ChatGPT subscription.
 
-### Native text rendering (text-to-image)
+![GPT Image 2 example — flat-color lobster repainted as a 1950s ukiyo-e woodblock print](https://raw.githubusercontent.com/agentspace-so/skills/main/gpt-image-2/gallery/d-ukiyoe.png)
 
-![GPT Image 2 poster with legible typography](https://raw.githubusercontent.com/agentspace-so/skills/main/gpt-image-2/gallery/a-poster.png)
-
-Every letter, the slash, the em-dash, and the italic tagline are **rendered, not hallucinated**. Legible in-image text is the one thing every other image model still stumbles on; Image 2 makes it the default.
-
-### Style transfer (image-to-image)
-
-![Lobster repainted as ukiyo-e woodblock print](https://raw.githubusercontent.com/agentspace-so/skills/main/gpt-image-2/gallery/d-ukiyoe.png)
-
-A flat-color source icon repainted as a 1950s ukiyo-e woodblock print. Composition preserved, rendering swapped. The model even added a correct red chop reading **海老之圖** because it knew the genre's visual grammar.
-
-### Two-step agent workflow — character consistency across calls
-
-<p>
-  <img alt="CLAW logo generated from text" src="https://raw.githubusercontent.com/agentspace-so/skills/main/gpt-image-2/gallery/c1-logo.png" width="45%">
-  <img alt="Same logo placed on a heather-gray t-shirt" src="https://raw.githubusercontent.com/agentspace-so/skills/main/gpt-image-2/gallery/c2-tshirt.png" width="45%">
-</p>
-
-Step 1 generates a brand mark (text-to-image). Step 2 passes that output back in as `--ref` and places it on a t-shirt mockup (image-to-image). The lobster on the t-shirt is **the same lobster** — other tools would redraw a new one and break brand consistency. This is the payoff for running GPT Image 2 behind an agent.
+*Example output: a plain flat-color icon repainted via `--ref` in ukiyo-e style — composition preserved, rendering swapped, red chop reading 海老之圖 added by the model unprompted.*
 
 ## When to trigger
 
@@ -97,15 +85,6 @@ Optional: `--timeout-sec 300` (default 300).
 3. `python3` on PATH (ships with macOS; `apt install python3` on Linux).
 
 This skill does **not** grant image-generation capability on its own. It exposes the capability the user already has through their ChatGPT subscription.
-
-### Don't have a ChatGPT subscription?
-
-This skill targets the flow where you already pay for ChatGPT and want image generation directly inside your agent. If you don't have a subscription (or don't want to install the Codex CLI), GPT Image 2 is also available as a hosted web tool — no signup required for casual use:
-
-- **Text-to-image:** <https://www.runcomfy.com/models/openai/gpt-image-2/text-to-image>
-- **Image edit (i2i):** <https://www.runcomfy.com/models/openai/gpt-image-2/edit>
-
-Those web tools are outside this skill's scope; the instructions above cover only the local Codex CLI flow.
 
 ## Exit codes
 
