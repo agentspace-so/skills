@@ -12,13 +12,6 @@ description: >
 emoji: "🪞"
 homepage: https://agentspace.so
 license: MIT
-clawdis:
-  requires:
-    bins:
-      - codex
-      - python3
-    config:
-      - ~/.codex/sessions
 ---
 
 # 🪞 GPT Image 2 — Image Generation via Your ChatGPT Subscription
