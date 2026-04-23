@@ -16,11 +16,11 @@ license: MIT
 
 # 🪞 GPT Image 2 — Image Generation via Your ChatGPT Subscription
 
-Generate images with **GPT Image 2** (ChatGPT Images 2.0) inside Claude Code, using the ChatGPT Plus or Pro subscription you already pay for — **no OpenAI API key, no Fal / Replicate key, no per-image billing.**
+Generate images with **GPT Image 2** (ChatGPT Images 2.0) inside your agent, using the ChatGPT Plus or Pro subscription you already pay for — **no OpenAI API key, no Fal / Replicate key, no per-image billing.**
 
 Text-to-image, image-to-image editing, style transfer, and multi-reference composition. Runs entirely through the local `codex` CLI you're already logged into.
 
-> **Heads up — this skill requires a ChatGPT Plus or Pro subscription _plus_ the Codex CLI installed locally.** Don't have either? GPT Image 2 is also available as a hosted web UI — no signup, no subscription:
+> **Heads up — this skill requires a ChatGPT Plus or Pro subscription _plus_ the Codex CLI installed locally.** If you have neither, you can use GPT Image 2 in the browser via RunComfy instead — hosted, no ChatGPT subscription or local install needed (RunComfy account required):
 >
 > - **Text-to-image:** <https://www.runcomfy.com/models/openai/gpt-image-2/text-to-image>
 > - **Image edit (i2i):** <https://www.runcomfy.com/models/openai/gpt-image-2/edit>
