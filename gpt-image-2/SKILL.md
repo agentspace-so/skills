@@ -29,7 +29,7 @@ Text-to-image, image-to-image editing, style transfer, and multi-reference compo
 
 ![GPT Image 2 example — flat-color lobster repainted as a 1950s ukiyo-e woodblock print](https://raw.githubusercontent.com/agentspace-so/skills/main/gpt-image-2/gallery/d-ukiyoe.png)
 
-*Example output: a plain flat-color icon repainted via `--ref` in ukiyo-e style — composition preserved, rendering swapped, red chop reading 海老之圖 added by the model unprompted.*
+*Example output: a plain flat-color icon repainted via `--ref` in ukiyo-e style — composition preserved, rendering swapped, period-appropriate red seal added by the model unprompted.*
 
 ## When to trigger
 
@@ -37,7 +37,6 @@ Trigger when the user explicitly asks for GPT Image 2 via their ChatGPT subscrip
 
 - "use GPT Image 2" / "use gpt-image-2" / "use ChatGPT Images 2.0"
 - "use Image 2" / "image 2 this"
-- "用 GPT Image 2 生图" / "用我的 ChatGPT 订阅生图"
 - attached a reference image and asked to remix / edit / restyle it
 
 Do **not** auto-trigger for a plain "generate an image" request if the user didn't specify this route. If they did specify it, do not silently fall back to HTML mockups, screenshots, or a different image model.
