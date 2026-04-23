@@ -24,6 +24,8 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 PROMPT=""
 OUT=""
 REF_IMAGES=()
@@ -113,55 +115,10 @@ if [[ ! -s "$new_sessions_file" ]]; then
   exit 6
 fi
 
-# Extract the image. Iterate over all new session files; in each, find the
-# LAST large base64 blob whose header matches a known image format. Prefer
-# the largest such blob across all sessions (the generated image is the
-# high-resolution output; text-to-image has a single blob; image-to-image
-# has at most two — the reference input and the generated output — and the
-# output is the larger one when the model produces at native Image-2 res).
+# Extract the image from the new session rollout(s). Extraction logic lives
+# in a separate Python module; see scripts/extract_image.py for details.
 set +e
-python3 - "$OUT" "$new_sessions_file" <<'PY'
-import base64, json, pathlib, re, sys
-
-out_path = pathlib.Path(sys.argv[1])
-session_list_path = pathlib.Path(sys.argv[2])
-session_paths = [pathlib.Path(p) for p in session_list_path.read_text().splitlines() if p.strip()]
-
-MAGIC = {
-    "iVBORw0KGgo": "png",   # PNG header
-    "/9j/":        "jpg",   # JPEG SOI
-    "UklGR":       "webp",  # RIFF....WEBP
-}
-
-best = None  # (blob, ext, source_path)
-for session_path in session_paths:
-    try:
-        text = session_path.read_text(errors="replace")
-    except Exception:
-        continue
-    for line in text.splitlines():
-        try:
-            obj = json.loads(line)
-        except Exception:
-            continue
-        flat = json.dumps(obj)
-        for m in re.finditer(r'"([A-Za-z0-9+/=]{500,})"', flat):
-            blob = m.group(1)
-            for magic, ext in MAGIC.items():
-                if blob.startswith(magic):
-                    if best is None or len(blob) > len(best[0]):
-                        best = (blob, ext, session_path)
-                    break
-
-if best is None:
-    print("IMAGE_NOT_FOUND_IN_SESSION", file=sys.stderr)
-    sys.exit(7)
-
-data = base64.b64decode(best[0])
-out_path.parent.mkdir(parents=True, exist_ok=True)
-out_path.write_bytes(data)
-print(out_path)
-PY
+python3 "$SCRIPT_DIR/extract_image.py" "$OUT" "$new_sessions_file"
 py_rc=$?
 set -e
 
