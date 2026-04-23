@@ -3,12 +3,12 @@ name: gpt-image-2
 displayName: "🪞 GPT Image 2 — Image Generation via Your ChatGPT Subscription"
 description: >
   Generate images with GPT Image 2 (ChatGPT Images 2.0) inside Claude Code,
-  using your existing ChatGPT Plus or Pro subscription — no OpenAI API key,
-  no per-image billing. Supports text-to-image, image-to-image editing,
-  style transfer, and multi-reference composition via the local Codex CLI.
-  Triggers on "gpt image 2", "gpt-image-2", "ChatGPT Images 2.0", "image 2",
-  or any explicit ask to generate or edit an image through the user's
-  ChatGPT plan.
+  using your existing ChatGPT Plus or Pro subscription — no separate OpenAI
+  access, no per-image billing. Supports text-to-image, image-to-image
+  editing, style transfer, and multi-reference composition via the local
+  Codex CLI. Triggers on "gpt image 2", "gpt-image-2", "ChatGPT Images 2.0",
+  "image 2", or any explicit ask to generate or edit an image through the
+  user's ChatGPT plan.
 emoji: "🪞"
 homepage: https://agentspace.so
 license: MIT
@@ -16,7 +16,7 @@ license: MIT
 
 # 🪞 GPT Image 2 — Image Generation via Your ChatGPT Subscription
 
-Generate images with **GPT Image 2** (ChatGPT Images 2.0) inside your agent, using the ChatGPT Plus or Pro subscription you already pay for — **no OpenAI API key, no Fal / Replicate key, no per-image billing.**
+Generate images with **GPT Image 2** (ChatGPT Images 2.0) inside your agent, using your existing ChatGPT Plus or Pro subscription — **no separate OpenAI access, no Fal or Replicate tokens, no per-image billing.**
 
 Text-to-image, image-to-image editing, style transfer, and multi-reference composition. Runs entirely through the local `codex` CLI you're already logged into.
 
