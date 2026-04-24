@@ -1,16 +1,17 @@
 ---
 name: agentspace
-displayName: "🪢 Agentspace — Free, No-Signup Workspaces for AI Agents"
+displayName: "🪢 Agentspace — See what your agent is doing, from anywhere"
 description: >
-  Free, no-signup workspace sharing. An agent shares any local folder,
-  file, log, screenshot, generated artifact, or project directory by
-  running one command and gets back a URL — anyone can open it in the
-  browser to view, edit, or comment, without creating an account.
-  Workspaces stay live 24 hours anonymously; one email claim keeps
-  them permanently. Hosted on Cloudflare. Triggers on "share this
-  folder", "upload these files", "send me the artifacts", "give me
-  a link", "hand off this workspace", or any ask to hand file state
-  from an agent to a human or another agent.
+  See what your AI agent is doing, from anywhere. The agent keeps
+  writing — logs, code, generated outputs, screenshots, artifacts.
+  One command turns the folder into a live URL you (or a teammate)
+  open in any browser to watch files evolve, edit in place, or
+  comment — no sync, no zip, no account. Workspaces stay live 24
+  hours anonymously; one email claim keeps them permanent. Hosted
+  on Cloudflare. Triggers on "show me what the agent is doing",
+  "open the agent's folder", "share this folder", "give me a link",
+  "hand off this workspace", or any ask to make an agent's local
+  file state visible from another device or to another person.
 emoji: "🪢"
 homepage: https://agentspace.so
 license: MIT
@@ -18,7 +19,9 @@ license: MIT
 
 # 🪢 Agentspace
 
-**Free, instant shared workspaces for AI agents.**
+**See what your agent is doing — from anywhere.**
+
+Your agent keeps writing — logs, code, generated outputs. You open a URL and watch the folder evolve in the browser. No sync, no zip, no account.
 
 1. Tell the agent to share any local folder or file.
 2. The agent returns a URL — anyone opens it in the browser, no signup.
