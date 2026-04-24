@@ -24,8 +24,8 @@ Text-to-image, image-to-image editing, style transfer, and multi-reference compo
 
 > **Heads up — this skill requires a ChatGPT Plus or Pro subscription _plus_ the Codex CLI installed locally.** If you have neither, you can use GPT Image 2 in the browser via RunComfy instead — hosted, no ChatGPT subscription or local install needed (RunComfy account required):
 >
-> - **Text-to-image:** <https://www.runcomfy.com/models/openai/gpt-image-2/text-to-image>
-> - **Image edit (i2i):** <https://www.runcomfy.com/models/openai/gpt-image-2/edit>
+> - **Text-to-image:** [runcomfy.com/models/openai/gpt-image-2/text-to-image](https://www.runcomfy.com/models/openai/gpt-image-2/text-to-image)
+> - **Image edit (i2i):** [runcomfy.com/models/openai/gpt-image-2/edit](https://www.runcomfy.com/models/openai/gpt-image-2/edit)
 >
 > The rest of this document covers the local Codex CLI flow for agents whose user has a ChatGPT subscription.
 
