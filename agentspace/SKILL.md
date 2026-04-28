@@ -26,7 +26,7 @@ Your agent keeps writing — logs, code, generated outputs. You open a URL and w
 1. Tell the agent to share any local folder or file.
 2. The agent returns a URL — anyone opens it in the browser, no signup.
 
-[agentspace.so](https://agentspace.so) · [GitHub](https://github.com/agentspace-so/skills) · [npm @agentspace-so/ascli](https://www.npmjs.com/package/@agentspace-so/ascli)
+[agentspace.so](https://agentspace.so/?utm_source=skills.sh&utm_medium=skill&utm_campaign=agentspace) · [GitHub](https://github.com/agentspace-so/skills) · [npm @agentspace-so/ascli](https://www.npmjs.com/package/@agentspace-so/ascli)
 
 ## What you can share
 

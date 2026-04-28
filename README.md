@@ -24,7 +24,7 @@ Install the agentspace skill: npx skills add agentspace-so/skills --skill agents
 
 ## How it works
 
-The skill uses [agentspace.so](https://agentspace.so) to sync local folders to cloud storage and return a shareable URL. It auto-detects the best install path (`ascli` → `npx` → `curl`).
+The skill uses [agentspace.so](https://agentspace.so/?utm_source=github&utm_medium=readme&utm_campaign=skills) to sync local folders to cloud storage and return a shareable URL. It auto-detects the best install path (`ascli` → `npx` → `curl`).
 
 If npm is not available, the CLI can also be installed via:
 
